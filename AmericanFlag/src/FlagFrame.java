@@ -5,9 +5,8 @@ import java.awt.event.ComponentEvent;
 import javax.swing.*;
 
 public class FlagFrame extends JFrame {
-	//Taskbar height 
 	
-	//Sets the basic features of the JFrame
+	//Sets the basic features of the JFrame adds FlagPanel
 	public FlagFrame() {
 		FlagPanel content = new FlagPanel();
 

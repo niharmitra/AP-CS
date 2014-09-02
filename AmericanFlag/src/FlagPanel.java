@@ -18,6 +18,7 @@ public class FlagPanel extends JPanel {
 	//Old Glory Blue
 	private static final Color blue = new Color(0, 38, 100);
 
+	//Sets the default size of the flag, then paints it.
 	public FlagPanel() {
 		this.setPreferredSize(niceSize);
 		repaint();
@@ -47,7 +48,7 @@ public class FlagPanel extends JPanel {
 		}
 	}
 	
-	//Draws the 13 red stripes of the flag
+	//Draws the 13 stripes of the flag
 	private void drawStripes(Graphics g) {
 		g.setColor(red);
 		int h = height;
