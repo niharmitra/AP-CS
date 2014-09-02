@@ -7,7 +7,9 @@ import java.awt.event.ComponentEvent;
 import javax.swing.*;
 
 public class FlagPanel extends JPanel {
+	//Default dimension of the flag
 	private static final Dimension niceSize = new Dimension(1900, 1000);
+	//Height and Width of the actual flag
 	private int height;
 	private int width;
 	//Aspect ratio of the flag (width/height)
@@ -48,7 +50,9 @@ public class FlagPanel extends JPanel {
 		}
 	}
 	
-	//Draws the 13 stripes of the flag
+	//drawStripes() takes the parameter Graphics (g)
+	//Using Graphics, it draws the red stripes of the flag
+	//The white background means that those "stripes" don't need to be drawn
 	private void drawStripes(Graphics g) {
 		g.setColor(red);
 		int h = height;
@@ -60,7 +64,8 @@ public class FlagPanel extends JPanel {
 		}
 	}
 	
-	//Draws the blue union
+	//drawUnion() takes Graphics (g) as the parameter
+	//Using g.fillRect(), it draws the blue union (the blue rectangle in the upper-left)
 	private void drawUnion(Graphics g) {
 		g.setColor(blue);
 		int h = height;
@@ -69,7 +74,8 @@ public class FlagPanel extends JPanel {
 		g.fillRect(0, 0, (int) Math.round(0.76*w/ratio), (int) Math.round((h*7)/13));
 	}
 	
-	//Draws the 50 white stars
+	//drawStars() takes Graphics (g) as the parameter
+	//It calls drawStar() for every x,y that is needed
 	private void drawStars(Graphics g) {
 		g.setColor(Color.WHITE);
 		double h = height;
@@ -91,7 +97,8 @@ public class FlagPanel extends JPanel {
 		}
 	}
 	
-	//Draws a single star centered at x,y
+	//Takes Graphics (g), double x (x coordinate) and double y (y coordinate)
+	//Draws a 5 pointed star centered at x,y using g.fillPolygon()
 	private void drawStar(Graphics g, double x, double y) {
 		//Ratio of diameter to height of the flag
 		double diameterRatio = 0.0616;
