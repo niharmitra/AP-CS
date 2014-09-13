@@ -16,6 +16,8 @@
  * 	encapsulated methods to draw the various parts of the American flag
  */
 
+//Nice main method
+//Just put the main method in the flag class
 public class Main {
 	//Calls the FlagFrame constructor
 	public static void main(String[] args) {
