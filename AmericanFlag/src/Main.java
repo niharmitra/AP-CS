@@ -1,6 +1,6 @@
 /*
  * Summary of the program:
- * This is a resizable American Flag that scales while mantaining the correct aspect ratio
+ * This is a resizeable American Flag that scales while maintaining the correct aspect ratio
  * The colors and dimensions are all exactly taken from the official specifications
  * 
  * Usage Instructions:
@@ -16,8 +16,6 @@
  * 	encapsulated methods to draw the various parts of the American flag
  */
 
-//Nice main method
-//Just put the main method in the flag class
 public class Main {
 	//Calls the FlagFrame constructor
 	public static void main(String[] args) {

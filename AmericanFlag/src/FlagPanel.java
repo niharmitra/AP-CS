@@ -82,17 +82,21 @@ public class FlagPanel extends JPanel {
 
 		//9 rows of stars
 		for(int i=1; i<=9; i++) {
-			//11 stars per row, but only see...
-			for(int j=1; j<=11; j++) {
-				//...every other star
-				if(j%2 == i%2) {
-					//Spacing between stars (Horizontally and vertically from center to center
-					double starHorizontalSpacing = 0.063*h;
-					double starVerticalSpacing = 0.054*h;
-					double x = j*starHorizontalSpacing;
-					double y = i*starVerticalSpacing;
-					drawStar(g, x, y);
-				}
+			drawRowOfStars(i, h, g);
+		}
+	}
+	
+	private void drawRowOfStars(int i, double h, Graphics g) {
+		//11 stars per row, but only see...
+		for(int j=1; j<=11; j++) {
+			//...every other star
+			if(j%2 == i%2) {
+				//Spacing between stars (Horizontally and vertically from center to center
+				double starHorizontalSpacing = 0.063*h;
+				double starVerticalSpacing = 0.054*h;
+				double x = j*starHorizontalSpacing;
+				double y = i*starVerticalSpacing;
+				drawStar(g, x, y);
 			}
 		}
 	}

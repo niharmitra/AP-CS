@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class FlagFrame extends JFrame {
 	
-	//Sets the basic features of the JFrame adds FlagPanel
+	//Sets the basic features of the JFrame, creates a FlagPanel
 	public FlagFrame() {
 		FlagPanel content = new FlagPanel();
 
