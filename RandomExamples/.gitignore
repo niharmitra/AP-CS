@@ -1,1 +1,24 @@
+# Java files #
+*.class
+
+*.DS_Store
+
+# Mobile Tools for Java (J2ME) #
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# Virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Eclipse specific #
+*/.settings/
+*/bin/
+*/build/
+*/resources/
+*.txt
+.metadata/*
 /bin
