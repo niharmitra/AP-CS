@@ -17,13 +17,13 @@ public class Exercise1 {
 	 */
 	public static void main(String[] args) {
 		// Should print Ace of Diamonds 3 times
-		Card card = new Card(1, 1);
+		Card1 card = new Card1(1, 1);
 		card.print();
 		String s = card.toString();
 
-		Card card2 = new Card(1, 1);
+		Card1 card2 = new Card1(1, 1);
 
-		Deck deck = new Deck();
+		Deck1 deck = new Deck1();
 
 		// check sortDeck
 		deck.shuffle();
@@ -40,11 +40,11 @@ public class Exercise1 {
 		}
 
 		// make a subdeck
-		Deck hand = deck.subdeck(8, 12);
+		Deck1 hand = deck.subdeck(8, 12);
 		hand.print();
 
 		// check that findBisect doesn't find a card that's not there
-		Card badCard = new Card(1, 1);
+		Card1 badCard = new Card1(1, 1);
 		index = hand.findBisect(badCard, 0, hand.cards.length - 1);
 		if (index != -1) {
 			System.out.println("Found?");
@@ -59,7 +59,7 @@ public class Exercise1 {
 	/*
 	 * Checks that the deck is sorted.
 	 */
-	public static void checkSorted(Deck deck) {
+	public static void checkSorted(Deck1 deck) {
 		for (int i = 0; i < 51; i++) {
 			int flag = deck.cards[i].compareTo(deck.cards[i + 1]);
 			if (flag != -1) {
@@ -72,7 +72,7 @@ public class Exercise1 {
 /*
  * A Card represents a playing card with rank and suit.
  */
-class Card {
+class Card1 {
 	int suit, rank;
 
 	static String[] suits = { "Clubs", "Diamonds", "Hearts", "Spades" };
@@ -82,7 +82,7 @@ class Card {
 	/*
 	 * No-argument constructor.
 	 */
-	public Card() {
+	public Card1() {
 		this.suit = 0;
 		this.rank = 0;
 	}
@@ -90,7 +90,7 @@ class Card {
 	/*
 	 * Constructor with arguments.
 	 */
-	public Card(int suit, int rank) {
+	public Card1(int suit, int rank) {
 		this.suit = suit;
 		this.rank = rank;
 	}
@@ -112,7 +112,7 @@ class Card {
 	/*
 	 * Return true if the cards are equivalent.
 	 */
-	public boolean equals(Card that) {
+	public boolean equals(Card1 that) {
 		return (this.suit == that.suit && this.rank == that.rank);
 	}
 
@@ -120,7 +120,7 @@ class Card {
 	 * Compares two cards: returns 1 if the first card is greater -1 if the
 	 * seconds card is greater, and 0 if they are the equivalent.
 	 */
-	public int compareTo(Card that) {
+	public int compareTo(Card1 that) {
 
 		// first compare the suits
 		if (this.suit > that.suit)
@@ -148,26 +148,26 @@ class Card {
 /*
  * A Deck contains an array of cards.
  */
-class Deck {
-	Card[] cards;
+class Deck1 {
+	Card1[] cards;
 
 	/*
 	 * Makes a Deck with room for n Cards (but no Cards yet).
 	 */
-	public Deck(int n) {
-		this.cards = new Card[n];
+	public Deck1(int n) {
+		this.cards = new Card1[n];
 	}
 
 	/*
 	 * Makes an array of 52 cards.
 	 */
-	public Deck() {
-		this.cards = new Card[52];
+	public Deck1() {
+		this.cards = new Card1[52];
 
 		int index = 0;
 		for (int suit = 0; suit <= 3; suit++) {
 			for (int rank = 1; rank <= 13; rank++) {
-				this.cards[index] = new Card(suit, rank);
+				this.cards[index] = new Card1(suit, rank);
 				index++;
 			}
 		}
@@ -186,7 +186,7 @@ class Deck {
 	 * Returns index of the first location where card appears in deck. Or -1 if
 	 * it does not appear. Uses a linear search.
 	 */
-	public int findCard(Card card) {
+	public int findCard(Card1 card) {
 		for (int i = 0; i < cards.length; i++) {
 			if (card.equals(cards[i])) {
 				return i;
@@ -203,7 +203,7 @@ class Deck {
 	 * 
 	 * Precondition: the cards must be sorted from lowest to highest.
 	 */
-	public int findBisect(Card card, int low, int high) {
+	public int findBisect(Card1 card, int low, int high) {
 		if (high < low)
 			return -1;
 
@@ -236,7 +236,7 @@ class Deck {
 	 * Swaps two cards in a deck of cards.
 	 */
 	public void swapCards(int i, int j) {
-		Card temp = cards[i];
+		Card1 temp = cards[i];
 		cards[i] = cards[j];
 		cards[j] = temp;
 	}
@@ -278,8 +278,8 @@ class Deck {
 	 * Makes a new deck of cards with a subset of cards from the original. The
 	 * old deck and new deck share references to the same card objects.
 	 */
-	public Deck subdeck(int low, int high) {
-		Deck sub = new Deck(high - low + 1);
+	public Deck1 subdeck(int low, int high) {
+		Deck1 sub = new Deck1(high - low + 1);
 
 		for (int i = 0; i < sub.cards.length; i++) {
 			sub.cards[i] = cards[low + i];
@@ -290,9 +290,9 @@ class Deck {
 	/*
 	 * Merges two sorted decks into a new sorted deck.
 	 */
-	public static Deck originalMerge(Deck d1, Deck d2) {
+	public static Deck1 originalMerge(Deck1 d1, Deck1 d2) {
 		// create the new deck
-		Deck result = new Deck(d1.cards.length + d2.cards.length);
+		Deck1 result = new Deck1(d1.cards.length + d2.cards.length);
 
 		int choice; // records the winner (1 means d1, 2 means d2)
 		int i = 0; // traverses the first input deck
@@ -326,8 +326,8 @@ class Deck {
 	/*
 	 * Merges this deck with another one
 	 */
-	public Deck merge(Deck d) {
-		Deck result = new Deck(this.cards.length + d.cards.length);
+	public Deck1 merge(Deck1 d) {
+		Deck1 result = new Deck1(this.cards.length + d.cards.length);
 
 		int choice;
 		int i = 0;
@@ -358,15 +358,15 @@ class Deck {
 	/*
 	 * Sort the Deck using merge sort.
 	 */
-	public Deck mergeSort() {
+	public Deck1 mergeSort() {
 		if (cards.length < 2) {
 			return this;
 		}
 		int mid = (cards.length - 1) / 2;
 
 		// divide the deck roughly in half
-		Deck d1 = subdeck(0, mid);
-		Deck d2 = subdeck(mid + 1, cards.length - 1);
+		Deck1 d1 = subdeck(0, mid);
+		Deck1 d2 = subdeck(mid + 1, cards.length - 1);
 
 		// sort the halves
 		d1 = d1.mergeSort();
