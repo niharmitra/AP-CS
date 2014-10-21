@@ -13,7 +13,12 @@ import java.math.BigInteger;
 
 public class Exercise5 {
 	public static void main(String[] args) {
-		
+		Deck deck = new Deck();
+		deck.shuffle();
+		deck.deal();
+		deck.deal();
+		deck.deal();
+		deck.deal();
 	}
 
 	/*

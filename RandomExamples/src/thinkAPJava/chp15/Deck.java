@@ -27,6 +27,13 @@ class Deck {
 			}
 		}
 	}
+	
+	public PokerHand deal() {
+		PokerHand hand = new PokerHand(subdeck(0,4));
+		Deck leftover = subdeck(5, cards.length-1);
+		this.cards = leftover.cards;
+		return hand;
+	}
 
 	/*
 	 * Prints a deck of cards.
