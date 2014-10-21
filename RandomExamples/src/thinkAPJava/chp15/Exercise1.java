@@ -334,7 +334,7 @@ class Deck1 {
 		int j = 0;
 
 		for (int k = 0; k < result.cards.length; k++) {
-			choice=1;
+			choice = 1;
 			if (i == this.cards.length) {
 				choice = 2;
 			} else if (j == d.cards.length) {
@@ -374,7 +374,7 @@ class Deck1 {
 
 		// merge the two halves and return the result
 		// (d1 and d2 get garbage collected)
-		//return originalMerge(d1,d2);
+		// return originalMerge(d1,d2);
 		return d1.merge(d2);
 	}
 }
