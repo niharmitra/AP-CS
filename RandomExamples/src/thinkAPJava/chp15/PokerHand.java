@@ -7,7 +7,8 @@ public class PokerHand extends Deck {
 	}
 	
 	public boolean hasFlush() {
-		int suit = cards[0].rank;
+		int suit = cards[0].suit;
+		//Check if the cards have the same suit
 		for(int i=1; i<cards.length;i++) {
 			if(suit != cards[i].suit) {
 				return false;
@@ -17,7 +18,8 @@ public class PokerHand extends Deck {
 	}
 	
 	public boolean hasThreeKind() {
-		for(int i=0; i<cards.length-3; i++) {
+		//Check if consecutive 3 are the same rank
+		for(int i=0; i<2; i++) {
 			if(cards[i].rank == cards[i+1].rank) {
 				if(cards[i].rank == cards[i+2].rank) {
 					return true;
@@ -28,6 +30,7 @@ public class PokerHand extends Deck {
 	}
 	
 	public boolean hasOnePair() {
+		//Check if consecutive have same rank
 		for(int i=0; i<cards.length-2; i++) {
 			if(cards[i].rank == cards[i+1].rank) {
 				return true;
@@ -42,6 +45,7 @@ public class PokerHand extends Deck {
 		}
 		else {
 			int rank1=0;
+			//
 			for(int i=0; i<cards.length-2; i++) {
 				if(cards[i].rank == cards[i+1].rank && cards[i].rank != rank1) {
 					if(rank1 == 0) {
