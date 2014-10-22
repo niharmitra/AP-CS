@@ -48,13 +48,14 @@ public class PokerHand extends Deck {
 			for (int i = 0; i < cards.length - 2; i++) {
 				if (rank1 == 0 && cards[i].rank == cards[i + 1].rank) {
 					rank1 = cards[i].rank;
-				} else if (cards[i].rank == cards[i + 1].rank
+				}
+				if (cards[i].rank == cards[i + 1].rank
 						&& cards[i].rank != rank1) {
 					return true;
 				}
 
 			}
-			return true;
+			return false;
 		}
 	}
 
@@ -74,9 +75,21 @@ public class PokerHand extends Deck {
 		}
 		return false;
 	}
-
+	
 	public boolean hasFullHouse() {
-		return false;
+		int rank1 = cards[0].rank;
+		int rank2 = cards[3].rank;
+		for(int i=0; i<3; i++) {
+			if(cards[i].rank != rank1) {
+				return false;
+			}
+		}
+		for(int i=3; i<5; i++) {
+			if(cards[i].rank != rank2) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	@Override
@@ -86,7 +99,7 @@ public class PokerHand extends Deck {
 		while (!sorted) {
 			for (int i = 0; i < cards.length-1; i++) {
 				if (cards[i].rank > cards[i + 1].rank) {
-					swapCards(i, i + 1);
+					this.swapCards(i, i + 1);
 					sorted = false;
 				}
 			}

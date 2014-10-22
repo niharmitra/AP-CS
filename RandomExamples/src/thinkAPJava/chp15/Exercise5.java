@@ -28,7 +28,7 @@ public class Exercise5 {
 		int numTrials = 100000;
 		for (int i = 0; i < numTrials; i++) {
 			Deck deck = new Deck();
-			deck.sort();
+			deck.shuffle();
 			PokerHand hand = new PokerHand(deck.deal());
 
 			if (hand.hasFlush()) {
