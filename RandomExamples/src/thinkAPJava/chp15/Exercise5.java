@@ -28,7 +28,7 @@ public class Exercise5 {
 		int numTrials = 100000;
 		for (int i = 0; i < numTrials; i++) {
 			Deck deck = new Deck();
-			deck.shuffle();
+			deck.sort();
 			PokerHand hand = new PokerHand(deck.deal());
 
 			if (hand.hasFlush()) {
@@ -55,7 +55,7 @@ public class Exercise5 {
 		probStraight = 100* numStraight/numTrials;
 		
 		System.out.println("Probability of a flush is " + probFlush + "%");
-		System.out.println("Probability of a three in a row is " + probTriple + "%");
+		System.out.println("Probability of a three of a kind is " + probTriple + "%");
 		System.out.println("Proability of a one pair " + probOnePair + "%");
 		System.out.println("Probability of two pair " + probTwoPair + "%");
 		System.out.println("Probability of a straight " + probStraight +"%");
