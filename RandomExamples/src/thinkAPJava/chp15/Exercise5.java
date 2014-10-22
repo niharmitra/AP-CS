@@ -13,12 +13,45 @@ import java.math.BigInteger;
 
 public class Exercise5 {
 	public static void main(String[] args) {
-		Deck deck = new Deck();
-		deck.shuffle();
-		deck.deal();
-		deck.deal();
-		deck.deal();
-		deck.deal();
+		double numFlush = 0;
+		double numTriple = 0;
+		double numOnePair = 0;
+		double numTwoPair = 0;
+		
+		double probFlush;
+		double probTriple;
+		double probOnePair;
+		double probTwoPair;
+		
+		int numTrials = 100000;
+		for (int i = 0; i < numTrials; i++) {
+			Deck deck = new Deck();
+			deck.shuffle();
+			PokerHand hand = new PokerHand(deck.deal());
+
+			if (hand.hasFlush()) {
+				numFlush += 1;
+			}
+			if (hand.hasThreeKind()) {
+				numTriple += 1;
+			}
+			if(hand.hasOnePair()) {
+				numOnePair+=1;
+			}
+			if(hand.hasTwoPair()) {
+				numTwoPair+=1;
+			}
+		}
+		
+		probFlush = 100*numFlush/numTrials;
+		probTriple = 100*numTriple/numTrials;
+		probOnePair = 100* numOnePair / numTrials;
+		probTwoPair = 100* numTwoPair/ numTrials;
+		
+		System.out.println("Probability of a flush is " + probFlush + "%");
+		System.out.println("Probability of a three in a row is " + probTriple + "%");
+		System.out.println("Proability of a one pair " + probOnePair + "%");
+		System.out.println("Probability of two pair " + probTwoPair + "%");
 	}
 
 	/*

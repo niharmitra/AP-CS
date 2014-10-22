@@ -1,11 +1,12 @@
+package practice;
 /*
  * This class checks if two phrases are anagrams of each other
  */
 
 public class Anagram {
 	public static void main(String[] args) {
-		System.out.println(Anagram.isAnagram("A decimal point", "I'm a dot in place"));
-		System.out.println(Anagram.isAnagram("Slot machines", "Cash lost in them"));
+		System.out.println(Anagram.isAnagram("A decimal point", "Im a dot in place"));
+		System.out.println(Anagram.isAnagram("Slot machines", "Cash lost in em"));
 	}
 
 	public static boolean isAnagram(String inputPhrase, String inputAnagram) {

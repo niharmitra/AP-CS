@@ -3,24 +3,57 @@ package thinkAPJava.chp15;
 public class PokerHand extends Deck {
 	public PokerHand(Deck deck) {
 		cards = deck.cards;
-		System.out.println(deck.cards.length);
+		this.sort();
 	}
 	
 	public boolean hasFlush() {
-		for(int i=0; i<cards.length;i++) {
-			
+		int suit = cards[0].rank;
+		for(int i=1; i<cards.length;i++) {
+			if(suit != cards[i].suit) {
+				return false;
+			}
 		}
 		return true;
 	}
 	
 	public boolean hasThreeKind() {
 		for(int i=0; i<cards.length-3; i++) {
-			if(cards[i].equals(cards[i+1])) {
-				if(cards[i+1].equals(cards[i+2])) {
+			if(cards[i].rank == cards[i+1].rank) {
+				if(cards[i].rank == cards[i+2].rank) {
 					return true;
 				}
 			}
 		}
 		return false;
+	}
+	
+	public boolean hasOnePair() {
+		for(int i=0; i<cards.length-2; i++) {
+			if(cards[i].rank == cards[i+1].rank) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean hasTwoPair() {
+		if(!hasOnePair()) {
+			return false;
+		}
+		else {
+			int rank1=0;
+			for(int i=0; i<cards.length-2; i++) {
+				if(cards[i].rank == cards[i+1].rank && cards[i].rank != rank1) {
+					if(rank1 == 0) {
+						rank1 = cards[i].rank;
+					}
+					else {
+						return true;
+					}
+				}
+				
+			}
+			return true;
+		}
 	}
 }
