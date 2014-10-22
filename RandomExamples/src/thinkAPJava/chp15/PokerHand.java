@@ -56,4 +56,21 @@ public class PokerHand extends Deck {
 			return true;
 		}
 	}
+	
+	public boolean hasStraight() {
+		//Check that rank is sequential
+		for(int i=0; i<4; i++) {
+			if(cards[i].rank != cards[i+1].rank-1) {
+				return false;
+			}
+		}
+		int suit = cards[0].suit;
+		//Check for variation in suits
+		for(int i=0; i<5; i++) {
+			if(cards[i].suit != suit) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

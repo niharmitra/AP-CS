@@ -17,11 +17,13 @@ public class Exercise5 {
 		double numTriple = 0;
 		double numOnePair = 0;
 		double numTwoPair = 0;
+		double numStraight = 0;
 		
 		double probFlush;
 		double probTriple;
 		double probOnePair;
 		double probTwoPair;
+		double probStraight;
 		
 		int numTrials = 100000;
 		for (int i = 0; i < numTrials; i++) {
@@ -41,17 +43,22 @@ public class Exercise5 {
 			if(hand.hasTwoPair()) {
 				numTwoPair+=1;
 			}
+			if(hand.hasStraight()) {
+				numStraight+=1;
+			}
 		}
 		
 		probFlush = 100*numFlush/numTrials;
 		probTriple = 100*numTriple/numTrials;
 		probOnePair = 100* numOnePair / numTrials;
 		probTwoPair = 100* numTwoPair/ numTrials;
+		probStraight = 100* numStraight/numTrials;
 		
 		System.out.println("Probability of a flush is " + probFlush + "%");
 		System.out.println("Probability of a three in a row is " + probTriple + "%");
 		System.out.println("Proability of a one pair " + probOnePair + "%");
 		System.out.println("Probability of two pair " + probTwoPair + "%");
+		System.out.println("Probability of a straight " + probStraight +"%");
 	}
 
 	/*
