@@ -24,7 +24,7 @@ public class ASExercises {
 			return n;
 		}
 		return multiplyMatrices(exp(operand, n),base)[0][0];
-	}
+	}rhuang114@gmail.com
 	
 	public static int[][] multiplyMatrices(int[][] m1, int[][] m2) {
 		int[][] result = new int[m1.length][m2[0].length];
