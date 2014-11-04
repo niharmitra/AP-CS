@@ -56,9 +56,6 @@ public class Exercise5 {
 		
 		System.out.println("Probability of a flush is " + probFlush + "%");
 		System.out.println("Probability of a three of a kind is " + probTriple + "%");
-		System.out.println("Proability of a one pair " + probOnePair + "%");
-		System.out.println("Probability of two pair " + probTwoPair + "%");
-		System.out.println("Probability of a straight " + probStraight +"%");
 	}
 
 	/*

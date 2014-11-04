@@ -10,8 +10,6 @@ public class ASExercises {
 	}
 	
 	public static int fIterative(int n) {
-		//Running sum changed progressively
-		int sum = 0;
 		//Function rules
 		int[][] operand =
 			{{1,2,3},
@@ -24,11 +22,10 @@ public class ASExercises {
 			return n;
 		}
 		return multiplyMatrices(exp(operand, n),base)[0][0];
-	}rhuang114@gmail.com
+	}
 	
 	public static int[][] multiplyMatrices(int[][] m1, int[][] m2) {
 		int[][] result = new int[m1.length][m2[0].length];
-		
 		//initialize array to 0's
 		for(int i=0; i<result.length; i++) {
 			for(int k=0; k<result[0].length; k++) {
@@ -42,17 +39,26 @@ public class ASExercises {
 			for(int col=0; col<m2[0].length; col++) {
 				//Add the dot product of the first column by the second's row
 				for(int k=0; k<m1[0].length; k++) {
-					result[row][col] += m1[row][k] * m2[k][k];
+					result[row][col] += m1[row][k] * m2[k][col];
 				}
 			}
 		}
-		return new int[0][0];
+		return result;
 	}
 	
-	public static int[][] exp(int[][] m, int pow) {
-		int[][] result = new int[m.length][m[0].length];
-		
-		return result;
+	public static int[][] exp(int[][] m, int pow) {		
+		if(pow==1) {
+			return m;
+		}
+		else if(pow==2) {
+			return multiplyMatrices(m,m);
+		}
+		if(pow%2 == 0) {
+			return exp(exp(m,pow/2),2);
+		}
+		else {
+			return multiplyMatrices(m, exp(exp(m, (pow-1)/2),2));
+		}
 	}
 	
 	//The top element of the triangle is row 0
@@ -78,5 +84,6 @@ public class ASExercises {
 	
 	public static void main(String[] args) {
 		System.out.println(f(4));
+		System.out.println(fIterative(4));
 	}
 }
