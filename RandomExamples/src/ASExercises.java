@@ -21,7 +21,7 @@ public class ASExercises {
 		if(n <=3) {
 			return n;
 		}
-		return multiplyMatrices(exp(operand, n),base)[0][0];
+		return multiplyMatrices(exp(operand, n-3),base)[0][0];
 	}
 	
 	public static int[][] multiplyMatrices(int[][] m1, int[][] m2) {
