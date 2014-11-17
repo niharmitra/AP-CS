@@ -16,21 +16,18 @@ public class Sort {
 
 	public static int[] bubbleSort(int[] array) {
 		// return array
-		int[] sorted = new int[array.length];
-		sorted = array;
+		int[] sorted = array.clone();
 		// number of iterations for optimization purposes
 		int n = 1;
-		//if a swap has occurred and must rerun code
+		// if a swap has occurred and must rerun code
 		boolean swap = true;
 
 		while (swap) {
 			swap = false;
-			for(int i = 0; i < sorted.length - n; i++) {
-				if(sorted[i] > sorted[i+1]) {
+			for (int i = 0; i < sorted.length - n; i++) {
+				if (sorted[i] > sorted[i + 1]) {
 					swap = true;
-					int temp = sorted[i];
-					sorted[i] = sorted[i+1];
-					sorted[i+1] = temp;
+					swap(sorted, i, i + 1);
 				}
 			}
 		}
@@ -39,19 +36,39 @@ public class Sort {
 
 	public static int[] insertionSort(int[] array) {
 		int[] sorted = new int[array.length];
-		sorted = array;
+		sorted[0] = array[0];
+		for(int i=0; i<sorted.length; i++) {
+			int insert = array[i];
+			int k=i;
+			
+			while(sorted[k] > insert) {
+				sorted[k] = sorted[k-1];
+				k--;
+			}
+			sorted[k] = insert;
+		}
 		return sorted;
 	}
 
 	public static int[] selectionSort(int[] array) {
-		int[] sorted = new int[array.length];
-		sorted = array;
+		int[] sorted = array.clone();
+		for (int i = 0; i < sorted.length; i++) {
+
+		}
 		return sorted;
+	}
+
+	private static int[] swap(int[] arr, int i, int f) {
+		int temp = arr[i];
+		arr[i] = arr[f];
+		arr[f] = temp;
+		return arr;
 	}
 
 	public static void printArr(int[] array) {
 		for (int i = 0; i < array.length; i++) {
-			System.out.print(array[i]+" ");
+			System.out.print(array[i] + " ");
 		}
+		System.out.println("");
 	}
 }
