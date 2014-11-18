@@ -1,7 +1,7 @@
 package sorting;
 
 public class Sort {
-	private static int[] array = { 6, 5, 3, 1, 8, 7, 2, 4 };
+	private static int[] array = {6, 5, 3, 1, 8, 7, 2, 4 };
 
 	public static void main(String[] args) {
 		System.out.println("Original: ");
@@ -33,27 +33,44 @@ public class Sort {
 		}
 		return sorted;
 	}
-
+	
 	public static int[] insertionSort(int[] array) {
 		int[] sorted = new int[array.length];
-		sorted[0] = array[0];
-		for(int i=0; i<sorted.length; i++) {
+		//Keep inserting a term until each term is inserted
+		for (int i = 0; i < sorted.length; i++) {
 			int insert = array[i];
-			int k=i;
-			
-			while(sorted[k] > insert) {
-				sorted[k] = sorted[k-1];
-				k--;
+			int j;
+			//Shifts all terms forward to make space
+			for(j=i-1; j>=0 && insert < sorted[j]; j--) {
+				sorted[j+1] = sorted[j];
 			}
-			sorted[k] = insert;
+			sorted[j+1] = insert;
 		}
 		return sorted;
 	}
-
+	
+	//Iterate through the array and keep adding the minimum value to the front of the list so that the first x terms are sorted
 	public static int[] selectionSort(int[] array) {
 		int[] sorted = array.clone();
-		for (int i = 0; i < sorted.length; i++) {
-
+		//for each element in the array, find minimum and swap it with the first element
+		for(int i=0; i<sorted.length-1; i++) {
+			//minimum value
+			int min = array[i];
+			//index of minimum value
+			int minIndex = i;
+			
+			for(int j = i+1; j < sorted.length; j++) {
+				if(sorted[j] < min) {
+					minIndex = j;
+					min = sorted[j];
+				}
+			}
+			
+			//If a lower minimum has been found, swap with current index
+			if(minIndex != i) {
+				sorted[minIndex] = sorted[i];
+				sorted[i] = min;
+			}
 		}
 		return sorted;
 	}
