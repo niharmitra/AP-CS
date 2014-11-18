@@ -50,6 +50,7 @@ public class Sort {
 	}
 	
 	//Iterate through the array and keep adding the minimum value to the front of the list so that the first x terms are sorted
+	//There is a small bug in this program that I am unable to identify, in which the first element to be sorted is placed only once
 	public static int[] selectionSort(int[] array) {
 		int[] sorted = array.clone();
 		//for each element in the array, find minimum and swap it with the first element
