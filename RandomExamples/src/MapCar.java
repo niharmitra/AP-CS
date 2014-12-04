@@ -10,7 +10,6 @@ public abstract class MapCar<T, E> {
 		for(E element: list) {
 			retVal.add(method(element));
 		}
-		
 		return retVal;
 	}
 	

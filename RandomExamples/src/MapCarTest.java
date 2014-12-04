@@ -17,7 +17,7 @@ public class MapCarTest extends MapCar<Integer, Integer> {
 	//Adds 1 to each element
 	@Override
 	public Integer method(Integer input) {
-		return input + 1;
+		return input * input;
 	}
 
 }
