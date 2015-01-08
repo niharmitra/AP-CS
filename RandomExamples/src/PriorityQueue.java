@@ -1,9 +1,10 @@
 
 public class PriorityQueue {
+	//O(1)
 	public int size() {
 		
 	}
-	//O
+	//O(ln n)
 	public void add(E c) {
 		
 	}
@@ -11,27 +12,27 @@ public class PriorityQueue {
 	public priorityQueue() {
 		
 	}
-	//O
-	public boolean remove(Object o) {
+	//O(n)
+	public boolean remove(E o) {
 		
 	}
-	//O
+	//O(ln n)
 	public E poll() {
 		
 	}
-	
+	//O(n)
 	public void clear() {
 		
 	}
-	
+	//O(n)
 	public void reverseComparator() {
 		
 	}
-	//O
+	//O(n)
 	public boolean contains(E c) {
 		
 	}
-	//O
+	//O(ln n)
 	public E peek() {
 		
 	}
