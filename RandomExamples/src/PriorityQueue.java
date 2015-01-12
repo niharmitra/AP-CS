@@ -1,11 +1,19 @@
 import java.util.*;
 
-public class PriorityQueue<E extends Comparable> {
+public class PriorityQueue<E extends Comparable<E>> {
 	private ArrayList<E> queue = new ArrayList<E>();
-
+	
+	//Whether comparator is reversed or not
+	private boolean reverse = false;
 	// O(1)
 	public int size() {
 		return queue.size();
+	}
+	
+	public void print() {
+		for(int i=0; i<size(); i++) {
+			System.out.println(queue.get(i));
+		}
 	}
 
 	// O(ln n) adds an element at the correct point
@@ -15,16 +23,19 @@ public class PriorityQueue<E extends Comparable> {
 			if(queue.get(i).compareTo(c) == 0) {
 				return false;
 			}
-			else if(queue.get(i).compareTo(c)<0) {
+			//If reverse comparator isn't used
+			else if(queue.get(i).compareTo(c)<0 && !reverse) {
+				queue.add(i, c);
+				return true;
+			}
+			else if(queue.get(i).compareTo(c)>0  && reverse) {
 				queue.add(i, c);
 				return true;
 			}
 		}
-		return false;
-	}
-
-	public PriorityQueue() {
-
+		//first element
+		queue.add(c);
+		return true;
 	}
 
 	// O(n)
@@ -49,7 +60,8 @@ public class PriorityQueue<E extends Comparable> {
 
 	// O(n)
 	public void reverseComparator() {
-		
+		reverse = !reverse;
+		Collections.reverse(queue);
 	}
 
 	// O(n)
