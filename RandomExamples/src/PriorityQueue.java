@@ -2,38 +2,42 @@ import java.util.*;
 
 public class PriorityQueue<E extends Comparable<E>> {
 	private ArrayList<E> queue = new ArrayList<E>();
-	
-	//Whether comparator is reversed or not
+
+	// Whether comparator is reversed or not
 	private boolean reverse = false;
+
 	// O(1)
 	public int size() {
 		return queue.size();
 	}
 	
+	public ArrayList<E> getList() {
+		return queue;
+	}
+	// Prints out all elements in the priority queue in order
 	public void print() {
-		for(int i=0; i<size(); i++) {
+		for (int i = 0; i < size(); i++) {
 			System.out.println(queue.get(i));
 		}
 	}
 
 	// O(ln n) adds an element at the correct point
 	public boolean add(E c) {
-		for(int i = 0; i< queue.size(); i++) {
-			//don't add duplicate elements
-			if(queue.get(i).compareTo(c) == 0) {
+		for (int i = 0; i < queue.size(); i++) {
+			// don't add duplicate elements
+			if (queue.get(i).compareTo(c) == 0) {
 				return false;
 			}
-			//If reverse comparator isn't used
-			else if(queue.get(i).compareTo(c)<0 && !reverse) {
+			// If reverse comparator isn't used
+			else if (queue.get(i).compareTo(c) < 0 && !reverse) {
 				queue.add(i, c);
 				return true;
-			}
-			else if(queue.get(i).compareTo(c)>0  && reverse) {
+			} else if (queue.get(i).compareTo(c) > 0 && reverse) {
 				queue.add(i, c);
 				return true;
 			}
 		}
-		//first element
+		// first element
 		queue.add(c);
 		return true;
 	}
@@ -59,16 +63,23 @@ public class PriorityQueue<E extends Comparable<E>> {
 	}
 
 	// O(n)
+	// Reverses the order of
 	public void reverseComparator() {
 		reverse = !reverse;
-		Collections.reverse(queue);
+		@SuppressWarnings("unchecked")
+		ArrayList<E> temp = (ArrayList<E>) queue.clone();
+		for (int i = queue.size() - 1; i >= 0; i--) {
+			temp.add(queue.get(i));
+		}
+
+		queue = temp;
 	}
 
 	// O(n)
 	public boolean contains(E c) {
 		return false;
 	}
-
+	
 	// O(ln n), returns the top value but doesn't remove it
 	public E peek() {
 		if (queue.size() == 0) {
@@ -78,7 +89,9 @@ public class PriorityQueue<E extends Comparable<E>> {
 	}
 
 	// Merges a second queue to this one
-	public void merge(PriorityQueue qq) {
-
+	public void merge(PriorityQueue<E> qq) {
+		for(E element: qq.getList()) {
+			this.add(element);
+		}
 	}
 }

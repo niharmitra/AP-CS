@@ -10,5 +10,7 @@ public class Main {
 		queue.print();
 		queue.reverseComparator();
 		queue.print();
+		
+		
 	}
 }
