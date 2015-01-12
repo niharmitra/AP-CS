@@ -1,5 +1,9 @@
 import java.util.*;
-
+/*
+ * A priority queue
+ * Uses an arraylist as the base
+ * Includes a efficient merge function
+ */
 public class PriorityQueue<E extends Comparable<E>> {
 	private ArrayList<E> queue = new ArrayList<E>();
 
@@ -89,6 +93,8 @@ public class PriorityQueue<E extends Comparable<E>> {
 	}
 
 	// Merges a second queue to this one
+	// This is efficient because it simply uses the add method to add each element
+	// Because the add method is already a fast method, this is not too slow
 	public void merge(PriorityQueue<E> qq) {
 		for(E element: qq.getList()) {
 			this.add(element);
