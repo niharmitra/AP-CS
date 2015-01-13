@@ -81,7 +81,7 @@ public class PriorityQueue<E extends Comparable<E>> {
 
 	// O(n)
 	public boolean contains(E c) {
-		return false;
+		return queue.contains(c);
 	}
 	
 	// O(ln n), returns the top value but doesn't remove it
