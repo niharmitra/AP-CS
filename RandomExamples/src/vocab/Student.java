@@ -1,4 +1,11 @@
 package vocab;
+/*
+ * Vocab #2
+ * Inheritance
+ * Delegation
+ * Polymorphism
+ * Overloading
+ */
 
 public class Student extends Person {
 	private String school;
