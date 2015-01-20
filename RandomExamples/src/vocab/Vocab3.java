@@ -1,10 +1,11 @@
 package vocab;
 /*
+ * Public Interface: Implements an external class to get a field that is otherwise missing
  * Interface: This class meets the interface "Interface" 
  * Encapsulation: The printAll method is encapsulated into multiple print methods
  * Invariant: The sum of the integers is an invariant
  */
-public class Vocab3 implements Interface {
+public class Vocab3 implements Interface, PublicInterface {
 	private int a = 1;
 	private int b = 2;
 	private int c = 3;
@@ -58,7 +59,7 @@ public class Vocab3 implements Interface {
 	
 	//Encapsulated code for printing the variables
 	private void printNums() {
-		System.out.println(a+","+b+","+c);
+		System.out.println(a+","+b+","+c+","+d);
 	}
 	
 	private void printStrings() {
