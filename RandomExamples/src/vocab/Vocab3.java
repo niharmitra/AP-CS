@@ -5,7 +5,7 @@ package vocab;
  * Encapsulation: The printAll method is encapsulated into multiple print methods
  * Invariant: The sum of the integers is an invariant
  */
-public class Vocab3 implements Interface, PublicInterface {
+public class Vocab3 implements Interface {
 	private int a = 1;
 	private int b = 2;
 	private int c = 3;
@@ -59,7 +59,7 @@ public class Vocab3 implements Interface, PublicInterface {
 	
 	//Encapsulated code for printing the variables
 	private void printNums() {
-		System.out.println(a+","+b+","+c+","+d);
+		System.out.println(a+","+b+","+c);
 	}
 	
 	private void printStrings() {
