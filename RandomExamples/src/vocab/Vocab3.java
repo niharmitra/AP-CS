@@ -1,6 +1,7 @@
 package vocab;
 /*
- * Public Interface: Implements an external class to get a field that is otherwise missing
+ * Public Interface: The public interface of this class is all the public methods it has
+ * There are no public variables
  * Interface: This class meets the interface "Interface" 
  * Encapsulation: The printAll method is encapsulated into multiple print methods
  * Invariant: The sum of the integers is an invariant
