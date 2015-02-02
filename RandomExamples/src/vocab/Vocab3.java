@@ -4,6 +4,7 @@ package vocab;
  * There are no public variables
  * Interface: This class meets the interface "Interface" 
  * Encapsulation: The printAll method is encapsulated into multiple print methods
+ * In addition, one of the variables, (a) has been encapsulated into getters and setters
  * Invariant: The sum of the integers is an invariant
  */
 public class Vocab3 implements Interface {
@@ -65,6 +66,14 @@ public class Vocab3 implements Interface {
 	
 	private void printStrings() {
 		System.out.println(A+","+B+","+C);
+	}
+
+	public int getA() {
+		return a;
+	}
+
+	public void setA(int a) {
+		this.a = a;
 	}
 
 }
