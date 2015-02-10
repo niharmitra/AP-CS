@@ -13,5 +13,5 @@ Implement a method that takes an adjacency matrix representation of a graph, a s
 ## Challenges
 
 ## Acknowledgements
-Chris Kuszmaul for explanation of Dijkstra's algorithm
+Chris Kuszmaul for explanation of Dijkstra's algorithm  
 Alex Tarng (@Alecajuice) for some assistance
