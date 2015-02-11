@@ -6,7 +6,17 @@ import java.util.ArrayList;
  * Uses a hash map for the graph
  */
 public class Dijkstra {
-	/* Creates an enum to represent the nodes, each node has a numeric value for
+	// Whether each node has been checked or not
+	ArrayList<Boolean> checked = new ArrayList<Boolean>();
+	// Shortest distance to that node from startnode
+	ArrayList<Integer> dist = new ArrayList<Integer>();
+	// Previous node in the path if applicable
+	ArrayList<Integer> node = new ArrayList<Integer>();
+
+	Graph graph;
+
+	/*
+	 * Creates an enum to represent the nodes, each node has a numeric value for
 	 * the graph
 	 */
 	public enum n {
@@ -38,21 +48,50 @@ public class Dijkstra {
 		graph.print();
 	}
 
-	public static void dijkstra(int startNode, Graph graph) {
-		//Whether a node has been checked or not
-		ArrayList<Boolean> checked = new ArrayList<Boolean>();
-		//Shortest distance to that node so far
-		ArrayList<Integer> dist = new ArrayList<Integer>();
-		//Closest node to go through
-		ArrayList<Integer> node = new ArrayList<Integer>();
-		
-		//Initializes arraylists as appropriate
-		for(int i=0; i<graph.getSize(); i++) {
+	private void takeInput() {
+
+	}
+
+	/**
+	 * Dijkstra's algorithm
+	 * 
+	 * @param startNode
+	 * @param graph
+	 */
+	public void dijkstra(int startNode, Graph graph) {
+		this.graph = graph;
+		// Initializes arraylists as appropriate
+		for (int i = 0; i < graph.getSize(); i++) {
 			checked.add(false);
 			dist.add(Integer.MAX_VALUE);
 			node.add(null);
 		}
-		
-		
+
+		// Update and select start node
+		checked.set(startNode, true);
+		dist.set(startNode, 0);
+
+		// Continue running the algorithm until no unselected nodes remain
+		while (checked.contains(false)) {
+			updateUnselectedNodes();
+			selectMin();
+		}
+	}
+
+	/**
+	 * Updates the unselected nodes that are connected to a selected node
+	 */
+	private void updateUnselectedNodes() {
+		for (int i = 0; i < graph.getSize(); i++) {
+			if(checked.get(i) == false) {
+				
+			}
+		}
+	}
+
+	/**
+	 * Finds the closest node of the unselected ones
+	 */
+	private void selectMin() {
 	}
 }

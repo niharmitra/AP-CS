@@ -14,4 +14,6 @@ Implement a method that takes an adjacency matrix representation of a graph, a s
 
 ## Acknowledgements
 Chris Kuszmaul for explanation of Dijkstra's algorithm  
-Alex Tarng (@Alecajuice) for some assistance
+Alex Tarng (@Alecajuice) for some assistance  
+James Ngo checked code  
+Rafi Long Looked at his code for guidance, explained some apsects of Dijkstra's algorithm, edited README.md against my will
