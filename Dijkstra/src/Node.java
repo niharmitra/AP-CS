@@ -64,9 +64,31 @@ public class Node implements Comparable<Node> {
 			}
 		}
 	}
-
-	public void addEdge(Node node, double value) {
-
+	
+	/**
+	 * Adds a value to the end of the adjacency list
+	 * @param value The value of the edge added
+	 */
+	public void addEdge(double value) {
+		adjList.add(value);
+	}
+	
+	/**
+	 * Changes the value of an existing edge in the adjacency list
+	 * @param index The index of the node
+	 * @param value The new value of the edge
+	 */
+	public void setEdge(int index, double value) {
+		adjList.set(index, value);
+	}
+	
+	/**
+	 * Gets the value of an edge in the adjacency matrix
+	 * @param index of the node for which you want the edge to
+	 * @return The distance to that node from this node
+	 */
+	public double getEdge(int index) {
+		return adjList.get(index);
 	}
 
 	/**
@@ -76,7 +98,7 @@ public class Node implements Comparable<Node> {
 	 */
 	@Override
 	public int compareTo(Node node) {
-		if(this.srcDist == ((Node) node).getSrcDist()) {
+		if(this.srcDist == node.getSrcDist()) {
 			return 0;
 		} else if(this.srcDist < node.getSrcDist()) {
 			return -1;

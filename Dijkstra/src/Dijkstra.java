@@ -33,8 +33,8 @@ public class Dijkstra {
 		startNode.setSrcDist(0);
 
 		while(!queue.isEmpty()) {
-			// Top one is the shortest source distance, so apply
-			// It's adjacency list to all other relevant nodes
+			/* Top one is the shortest source distance, so apply
+			   It's adjacency list to all other relevant nodes */
 			updateNodes(queue.peek(), graph);
 			queue.poll();
 		}
@@ -46,12 +46,12 @@ public class Dijkstra {
 	}
 	
 	/**
-	 * Updates the other nodes if a path through the current node is faster
+	 * Updates the nodes if the path through the "current" node is faster
 	 */
 	private static void updateNodes(Node currentNode, ArrayList<Node> graph) {
 		// Checks if the a path from the current node is shorter than the existing one
 		for(int i = 0; i < graph.size(); i++) {
-			double pathDist = currentNode.getSrcDist() + currentNode.adjList.get(i);
+			double pathDist = currentNode.getSrcDist() + currentNode.getEdge(i);
 			if(pathDist < graph.get(i).getSrcDist()) {
 				graph.get(i).setSrcDist(pathDist);
 				graph.get(i).setPrevNode(currentNode);
