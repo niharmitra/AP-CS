@@ -4,8 +4,10 @@ import java.util.ArrayList;
  * Implements Comparable for usage in a Priority Queue
  */
 public class Node implements Comparable<Node> {
-	/* The adjacency list of values of the edge to the corresponding node
-	 * Instead of ordered pairs, the adjacency list simply contains the value of the edge to each other node
+	/*
+	 * The adjacency list of values of the edge to the corresponding node
+	 * Instead of ordered pairs, the adjacency list simply contains the value of
+	 * the edge to each other node
 	 */
 	public ArrayList<Double> adjList;
 
@@ -27,10 +29,6 @@ public class Node implements Comparable<Node> {
 	}
 
 	String name;
-
-	public String getName() {
-		return name;
-	}
 
 	/**
 	 * Creates a node with the specified name, given the number of other nodes
@@ -64,26 +62,29 @@ public class Node implements Comparable<Node> {
 			}
 		}
 	}
-	
+
 	/**
 	 * Adds a value to the end of the adjacency list
+	 * 
 	 * @param value The value of the edge added
 	 */
 	public void addEdge(double value) {
 		adjList.add(value);
 	}
-	
+
 	/**
 	 * Changes the value of an existing edge in the adjacency list
+	 * 
 	 * @param index The index of the node
 	 * @param value The new value of the edge
 	 */
 	public void setEdge(int index, double value) {
 		adjList.set(index, value);
 	}
-	
+
 	/**
 	 * Gets the value of an edge in the adjacency matrix
+	 * 
 	 * @param index of the node for which you want the edge to
 	 * @return The distance to that node from this node
 	 */
@@ -98,23 +99,24 @@ public class Node implements Comparable<Node> {
 	 */
 	@Override
 	public int compareTo(Node node) {
-		if(this.srcDist == node.getSrcDist()) {
-			return 0;
-		} else if(this.srcDist < node.getSrcDist()) {
-			return -1;
-		} else if(this.srcDist > node.getSrcDist()) {
-			return 1;
-		}
-		return 0;
+		return ((Double) srcDist).compareTo(node.getSrcDist());
 	}
-
+	
+	/**
+	 * Overrides the default toString method to return the name of the node instead
+	 */
+	@Override
+	public String toString() {
+		return name;
+	}
+	
 	/**
 	 * Prints the node's name and the previous node
 	 */
 	public void printResult() {
-		//If there is no previous node, no path was found
+		// If there is no previous node, no path was found
 		if(prevNode != null) {
-			System.out.println(name + "," + prevNode.getName());
+			System.out.println(name + "," + prevNode.toString());
 		} else {
 			System.out.println(name + "," + "-");
 		}
