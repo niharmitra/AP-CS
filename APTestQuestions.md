@@ -161,41 +161,74 @@ e) I, II, and III
 ## Question 3
 ### Original Version
 ```Java	
-int money;
-
-     public Gambler(int m) { money = m; }
-
-     public int currentMoney() { return money; }
-     public void addMoney(int m) { money += m; }
-
-     public void work() { money += 100; }
-     public void play() { money /= 2; }
-     public liveAnotherDay() { work(); play(); }
-
-     public String toString() { return String.valueOf(money); }
+public class Gambler {
+	int money;
+	public Gambler(int m) { money = m; }
+	public int currentMoney() { return money; }
+	public void addMoney(int m) { money += m; }
+	public void work() { money += 100; }
+	public void play() { money /= 2; }
+	public liveAnotherDay() { work(); play(); }
+	public String toString() { return String.valueOf(money); }
 }
 
-public class CompulsiveGambler extends Gambler
-{
-     public CompulsiveGambler(int m)
-     {
-          < Missing statements >
-     }
+public class CompulsiveGambler extends Gambler {
+	public CompulsiveGambler(int m) {
+		< Missing statements >
+	}
 
-     public void work() { /* do nothing */ }
+	public void work() { /* do nothing */ }
 
-     public void play()
-     {
-          while (currentMoney() > 1)
-          {
-               super.play();
-          }
-     }
+	public void play() {
+		while (currentMoney() > 1) {
+			super.play();
+		}
+	}
 }
 ```
 Given that
 ```System.out.println(new CompulsiveGambler(300));```
-displays 300, which of the following could replace < Missing statements > in CompulsiveGambler's constructor?
+displays 300, which of the following could replace < Missing statements > in CompulsiveGambler's constructor?  
+I.    addMoney(m);  
+II.    super(m);  
+III.   super();  
+     addMoney(m);  
+a) I only  
+b) II only  
+c) I or II  
+d) II or III  
+e) I, II, or III  
+
+### New Version
+```Java	
+public class Gambler {
+	int money;
+	public Gambler(int m) { money = m; }
+	public int currentMoney() { return money; }
+	public void addMoney(int m) { money += m; }
+	public void work() { money += 100; }
+	public void play() { money /= 2; }
+	public liveAnotherDay() { work(); play(); }
+	public String toString() { return String.valueOf(money); }
+}
+
+public class CompulsiveGambler extends Gambler {
+	public CompulsiveGambler(int m) {
+		< Missing statements >
+	}
+
+	public void work() { /* do nothing */ }
+
+	public void play() {
+		while (currentMoney() > 1) {
+			super.play();
+		}
+	}
+}
+```
+Given that
+```System.out.println(new CompulsiveGambler(300));```
+displays 300, which of the following could replace < Missing statements > in CompulsiveGambler's constructor?  
 I.    addMoney(m);  
 II.    super(m);  
 III.   super();  
