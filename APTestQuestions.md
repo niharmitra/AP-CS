@@ -81,6 +81,9 @@ What is printed as a result of the call fido.act()?
 (d) Nothing is printed due to infinite recursion.  
 (e) run is printed infinitely.  
 Correct answer e).
+
+
+
 ## Question 2  
 ### Original: 
 For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
@@ -121,25 +124,26 @@ c) I and II
 d) II and III  
 e) I, II, and III  
 Correct answer e).
+
 ### New Version:
 For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
 Suppose
 ```Java
-System.out.println(new A() + "+" + new B());
+System.out.println(new A().equals(new B());
 ```
-displays ```A+B  ```
+displays ```true```
 Which of the following implementations would produce that result?  
 I. Class A has a method
 ```Java
-public String toString() { return "A"; }
+public boolean equals(Object o) { return ; }
 ```
    and class B has a method
 ```Java
-public String toString() { return "B"; }
+public boolean equals() { return "B"; }
 ```
 II. Both class A and class B extend class X that has a method
 ```Java
-public String toString() { return getClass().getName(); }
+public boolean equals() { return getClass().getName(); }
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
@@ -159,6 +163,8 @@ b) II only
 c) I and II  
 d) II and III  
 e) I, II, and III  
+
+
 
 ## Question 3
 ### Original Version
@@ -232,12 +238,15 @@ public class CompulsiveGambler extends Gambler {
 Given that
 ```System.out.println(new CompulsiveGambler(300));```
 displays 300, which of the following could replace < Missing statements > in CompulsiveGambler's constructor?  
-I.    addMoney(m);  
-II.    super(m);  
-III.   super();  
-     addMoney(m);  
+I. super(m/2);  
+addMoney(m/2);  
+II. addMoney(m/2);  
+super(m/2);  
+III. super();  
+addMoney(m);  
 a) I only  
 b) II only  
 c) I or II  
 d) II or III  
 e) I, II, or III  
+correct answer a).
