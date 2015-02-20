@@ -147,8 +147,8 @@ public boolean equals(Object o) { return getClass().getSuperclass().getName().eq
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
-public abstract String getName();
-public String toString() { return getName(); }
+public abstract String getSuperClassName();
+public boolean equals(Object o) { return getSuperClassName().equals(o.getSuperClassName()); }
 ```
 
 a) I only  
@@ -157,7 +157,7 @@ c) I and II
 d) II and III  
 e) I, II, and III  
 
-
+Correct answer d).
 
 ## Question 3
 ### Original Version
@@ -190,10 +190,10 @@ public class CompulsiveGambler extends Gambler {
 Given that
 ```System.out.println(new CompulsiveGambler(300));```
 displays 300, which of the following could replace < Missing statements > in CompulsiveGambler's constructor?  
-I.    addMoney(m);  
-II.    super(m);  
-III.   super();  
-     addMoney(m);  
+I. ```addMoney(m);```
+II. ```super(m);```
+III. ```super();
+     addMoney(m);```
 a) I only  
 b) II only  
 c) I or II  
@@ -231,15 +231,15 @@ public class CompulsiveGambler extends Gambler {
 Given that
 ```System.out.println(new CompulsiveGambler(300));```
 displays 300, which of the following could replace < Missing statements > in CompulsiveGambler's constructor?  
-I. super(m/2);  
-addMoney(m/2);  
-II. addMoney(m/2);  
-super(m/2);  
-III. super();  
-addMoney(m);  
+I. ```super(m/2);  
+addMoney(m/2);  ```
+II. ```addMoney(m/2);  
+super(m/2);  ```
+III. ```super();  
+addMoney(m);  ```
 a) I only  
 b) II only  
 c) I or II  
 d) II or III  
 e) I, II, or III  
-correct answer a).
+Correct answer a).
