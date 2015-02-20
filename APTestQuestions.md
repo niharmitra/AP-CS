@@ -80,7 +80,7 @@ What is printed as a result of the call fido.act()?
 (d) Nothing is printed due to infinite recursion.  
 (e) run is printed infinitely.  
 
-## Question 1  
+## Question 2  
 ### Original: 
 For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
 Suppose
