@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>AP-Test-Questions by niharmitra</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>AP-Test-Questions</h1>
+        <p>AP Test Questions #2, 3, 4</p>
+        <p class="view"><a href="https://github.com/niharmitra/AP-CS">View the Project on GitHub <small>niharmitra/AP-CS</small></a></p>
+        <ul>
+          <li><a href="https://github.com/niharmitra/AP-CS/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/niharmitra/AP-CS/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/niharmitra/AP-CS">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>Nihar Mitra<br>
+AP CS<br>
+Kuszmaul 6<br>
+February 19, 2015  </p>
+
+<h1>
+<a id="ap-test-questions-234" class="anchor" href="#ap-test-questions-234" aria-hidden="true"><span class="octicon octicon-link"></span></a>AP Test Questions #2,3,4</h1>
+
+<h2>
+<a id="question-1" class="anchor" href="#question-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 1</h2>
+
+<h3>
+<a id="original" class="anchor" href="#original" aria-hidden="true"><span class="octicon octicon-link"></span></a>Original:</h3>
+
+<p>Consider the following two classes.  </p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">Dog</span> {
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">act</span>() {
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>run <span class="pl-pds">"</span></span>);
+        eat();
+    }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">eat</span>() { 
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>eat <span class="pl-pds">"</span></span>); 
+    }
+}
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">UnderDog</span> <span class="pl-s">extends</span> <span class="pl-e">Dog</span> {
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">act</span>() { 
+        <span class="pl-v">super</span><span class="pl-k">.</span>act();
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>sleep <span class="pl-pds">"</span></span>);
+    }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">eat</span>() { 
+        <span class="pl-v">super</span><span class="pl-k">.</span>eat(); 
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>bark <span class="pl-pds">"</span></span>); 
+    } 
+}</pre></div>
+
+<p>Assume that the following declaration appears in a class other than Dog.  </p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-stj">Dog</span> fido <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">UnderDog</span>();</pre></div>
+
+<p>What is printed as a result of the call fido.act()?<br>
+(a) run eat<br>
+(b) run eat sleep<br>
+(c) run eat sleep bark<br>
+(d) run eat bark sleep<br>
+(e) Nothing is printed due to infinite recursion.<br>
+Correct answer b).</p>
+
+<h3>
+<a id="new-version" class="anchor" href="#new-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>New version</h3>
+
+<p>Consider the following two classes.  </p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">Dog</span> {
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">act</span>() {
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>run <span class="pl-pds">"</span></span>);
+        eat();
+    }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">eat</span>() {
+        act();
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>eat <span class="pl-pds">"</span></span>); 
+    }
+}
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">OverDog</span> <span class="pl-s">extends</span> <span class="pl-e">Dog</span> {
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">act</span>() {
+        <span class="pl-v">super</span><span class="pl-k">.</span>act();
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>eat <span class="pl-pds">"</span></span>);
+    }
+}
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">UnderDog</span> <span class="pl-s">extends</span> <span class="pl-e">OverDog</span> {
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">act</span>() { 
+        <span class="pl-v">super</span><span class="pl-k">.</span>act();
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>sleep <span class="pl-pds">"</span></span>);
+    }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">eat</span>() { 
+        <span class="pl-v">super</span><span class="pl-k">.</span>eat(); 
+        <span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>print(<span class="pl-s1"><span class="pl-pds">"</span>bark <span class="pl-pds">"</span></span>); 
+    } 
+}</pre></div>
+
+<p>Assume that the following declaration appears in a class other than Dog.  </p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-stj">Dog</span> fido <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">UnderDog</span>();</pre></div>
+
+<p>What is printed as a result of the call fido.act()?<br>
+(a) eat sleep<br>
+(b) "sleep eat " is printed, then "run eat " is printed infinitely<br>
+(c) run eat sleep<br>
+(d) Nothing is printed due to infinite recursion.<br>
+(e) run is printed infinitely.<br>
+Correct answer e).</p>
+
+<h2>
+<a id="question-2" class="anchor" href="#question-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 2</h2>
+
+<h3>
+<a id="original-1" class="anchor" href="#original-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Original:</h3>
+
+<p>For any object obj, a call <code>obj.getClass().getName()</code> returns the name of the obj's class.
+Suppose</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-k">new</span> <span class="pl-stj">A</span>() <span class="pl-k">+</span> <span class="pl-s1"><span class="pl-pds">"</span>+<span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-k">new</span> <span class="pl-stj">B</span>());</pre></div>
+
+<p>displays <code>A+B</code>
+Which of the following implementations would produce that result?<br>
+I. Class A has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>A<span class="pl-pds">"</span></span>; }</pre></div>
+
+<p>and class B has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">"</span>B<span class="pl-pds">"</span></span>; }</pre></div>
+
+<p>II. Both class A and class B extend class X that has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> getClass()<span class="pl-k">.</span>getName(); }</pre></div>
+
+<p>III. Both class A and class B extend an abstract class X that has methods</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">abstract</span> <span class="pl-stj">String</span> getName();
+</pre></div>
+
+<p>Class A has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> getName(); }</pre></div>
+
+<p>and class B has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> getName(); }</pre></div>
+
+<p>a) I only<br>
+b) II only<br>
+c) I and II<br>
+d) II and III<br>
+e) I, II, and III<br>
+Correct answer e).</p>
+
+<h3>
+<a id="new-version-1" class="anchor" href="#new-version-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Version:</h3>
+
+<p>For any object obj, a call <code>obj.getClass().getName()</code> returns the name of the obj's class.
+Suppose</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-stj">System</span><span class="pl-k">.</span>out<span class="pl-k">.</span>println(<span class="pl-k">new</span> <span class="pl-stj">A</span>()<span class="pl-k">.</span>equals(<span class="pl-k">new</span> <span class="pl-stj">B</span>());</pre></div>
+
+<p>displays <code>true</code>
+Which of the following implementations would produce that result?<br>
+I. Class A has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-st">boolean</span> equals(<span class="pl-stj">Object</span> o) { <span class="pl-k">return</span> getClass()<span class="pl-k">.</span>getName()<span class="pl-k">.</span>equals(o<span class="pl-k">.</span>getClass()<span class="pl-k">.</span>getName()); }</pre></div>
+
+<p>and class B has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-st">boolean</span> equals(<span class="pl-stj">Object</span> o) { <span class="pl-k">return</span> getClass()<span class="pl-k">.</span>getName()<span class="pl-k">.</span>equals(o<span class="pl-k">.</span>getClass()<span class="pl-k">.</span>getName()); }</pre></div>
+
+<p>II. Both class A and class B extend class X that has a method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-st">boolean</span> equals(<span class="pl-stj">Object</span> o) { <span class="pl-k">return</span> getClass()<span class="pl-k">.</span>getSuperclass()<span class="pl-k">.</span>getName()<span class="pl-k">.</span>equals(o<span class="pl-k">.</span>getClass(()<span class="pl-k">.</span>getSuperclass()<span class="pl-k">.</span>getName())); }</pre></div>
+
+<p>III. Both class A and class B extend an abstract class X that has methods</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">abstract</span> <span class="pl-stj">String</span> getName();
+<span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> getName(); }</pre></div>
+
+<p>a) I only<br>
+b) II only<br>
+c) I and II<br>
+d) II and III<br>
+e) I, II, and III  </p>
+
+<h2>
+<a id="question-3" class="anchor" href="#question-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 3</h2>
+
+<h3>
+<a id="original-version" class="anchor" href="#original-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Original Version</h3>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">Gambler</span> {
+    <span class="pl-st">int</span> money;
+    <span class="pl-s">public</span> <span class="pl-en">Gambler</span>(<span class="pl-st">int</span> <span class="pl-v">m</span>) { money <span class="pl-k">=</span> m; }
+    <span class="pl-s">public</span> <span class="pl-st">int</span> <span class="pl-en">currentMoney</span>() { <span class="pl-k">return</span> money; }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">addMoney</span>(<span class="pl-st">int</span> <span class="pl-v">m</span>) { money <span class="pl-k">+=</span> m; }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">work</span>() { money <span class="pl-k">+=</span> <span class="pl-c1">100</span>; }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">play</span>() { money <span class="pl-k">/=</span> <span class="pl-c1">2</span>; }
+    <span class="pl-s">public</span> <span class="pl-en">liveAnotherDay</span>() { work(); play(); }
+    <span class="pl-s">public</span> <span class="pl-stj">String</span> <span class="pl-en">toString</span>() { <span class="pl-k">return</span> <span class="pl-stj">String</span><span class="pl-k">.</span>valueOf(money); }
+}
+
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">CompulsiveGambler</span> <span class="pl-s">extends</span> <span class="pl-e">Gambler</span> {
+    <span class="pl-s">public</span> <span class="pl-en">CompulsiveGambler</span>(<span class="pl-st">int</span> <span class="pl-v">m</span>) {
+        <span class="pl-k">&lt;</span> <span class="pl-stj">Missing</span> statements <span class="pl-k">&gt;</span>
+    }
+
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">work</span>() { <span class="pl-c">/* do nothing */</span> }
+
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">play</span>() {
+        <span class="pl-k">while</span> (currentMoney() <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) {
+            <span class="pl-v">super</span><span class="pl-k">.</span>play();
+        }
+    }
+}</pre></div>
+
+<p>Given that
+<code>System.out.println(new CompulsiveGambler(300));</code>
+displays 300, which of the following could replace &lt; Missing statements &gt; in CompulsiveGambler's constructor?<br>
+I.    addMoney(m);<br>
+II.    super(m);<br>
+III.   super();<br>
+     addMoney(m);<br>
+a) I only<br>
+b) II only<br>
+c) I or II<br>
+d) II or III<br>
+e) I, II, or III<br>
+Correct answer b).</p>
+
+<h3>
+<a id="new-version-2" class="anchor" href="#new-version-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Version</h3>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">Gambler</span> {
+    <span class="pl-st">int</span> money;
+    <span class="pl-s">public</span> <span class="pl-en">Gambler</span>(<span class="pl-st">int</span> <span class="pl-v">m</span>) { money <span class="pl-k">=</span> m; }
+    <span class="pl-s">public</span> <span class="pl-st">int</span> <span class="pl-en">currentMoney</span>() { <span class="pl-k">return</span> money; }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">addMoney</span>(<span class="pl-st">int</span> <span class="pl-v">m</span>) { money <span class="pl-k">+=</span> m; }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">work</span>() { money <span class="pl-k">+=</span> <span class="pl-c1">100</span>; }
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">play</span>() { money <span class="pl-k">/=</span> <span class="pl-c1">2</span>; }
+    <span class="pl-s">public</span> <span class="pl-en">liveAnotherDay</span>() { work(); play(); }
+    <span class="pl-s">public</span> <span class="pl-stj">String</span> <span class="pl-en">toString</span>() { <span class="pl-k">return</span> <span class="pl-stj">String</span><span class="pl-k">.</span>valueOf(money); }
+}
+
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-en">CompulsiveGambler</span> <span class="pl-s">extends</span> <span class="pl-e">Gambler</span> {
+    <span class="pl-s">public</span> <span class="pl-en">CompulsiveGambler</span>(<span class="pl-st">int</span> <span class="pl-v">m</span>) {
+        <span class="pl-k">&lt;</span> <span class="pl-stj">Missing</span> statements <span class="pl-k">&gt;</span>
+    }
+
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">work</span>() { <span class="pl-c">/* do nothing */</span> }
+
+    <span class="pl-s">public</span> <span class="pl-st">void</span> <span class="pl-en">play</span>() {
+        <span class="pl-k">while</span> (currentMoney() <span class="pl-k">&gt;</span> <span class="pl-c1">1</span>) {
+            <span class="pl-v">super</span><span class="pl-k">.</span>play();
+        }
+    }
+}</pre></div>
+
+<p>Given that
+<code>System.out.println(new CompulsiveGambler(300));</code>
+displays 300, which of the following could replace &lt; Missing statements &gt; in CompulsiveGambler's constructor?<br>
+I. super(m/2);<br>
+addMoney(m/2);<br>
+II. addMoney(m/2);<br>
+super(m/2);<br>
+III. super();<br>
+addMoney(m);<br>
+a) I only<br>
+b) II only<br>
+c) I or II<br>
+d) II or III<br>
+e) I, II, or III<br>
+correct answer a).</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/niharmitra">niharmitra</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
