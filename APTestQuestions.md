@@ -148,6 +148,9 @@ public boolean equals(Object o) { return getClass().getSuperclass().getName().eq
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
 public abstract String getSuperClassName();
+```
+Each class has the method
+```Java
 public boolean equals(Object o) { return getSuperClassName().equals(o.getSuperClassName()); }
 ```
 
@@ -193,7 +196,7 @@ displays 300, which of the following could replace < Missing statements > in Com
 I. ```addMoney(m);```
 II. ```super(m);```
 III. ```super();
-     addMoney(m);```
+     addMoney(m);```  
 a) I only  
 b) II only  
 c) I or II  
@@ -236,7 +239,7 @@ addMoney(m/2);  ```
 II. ```addMoney(m/2);  
 super(m/2);  ```
 III. ```super();  
-addMoney(m);  ```
+addMoney(m);  ```  
 a) I only  
 b) II only  
 c) I or II  
