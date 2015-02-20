@@ -1,32 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>AP-Test-Questions by niharmitra</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <title>AP Test Questions by niharmitra</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>AP-Test-Questions</h1>
-        <p>AP Test Questions #2, 3, 4</p>
-        <p class="view"><a href="https://github.com/niharmitra/AP-CS">View the Project on GitHub <small>niharmitra/AP-CS</small></a></p>
-        <ul>
-          <li><a href="https://github.com/niharmitra/AP-CS/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/niharmitra/AP-CS/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/niharmitra/AP-CS">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
+
+    <header>
+      <div class="container">
+        <h1>AP Test Questions</h1>
+        <h2>AP Test Questions #2, 3, 4</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/niharmitra/AP-CS/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/niharmitra/AP-CS/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/niharmitra/AP-CS" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
         <p>Nihar Mitra<br>
 AP CS<br>
 Kuszmaul 6<br>
@@ -188,14 +189,19 @@ I. Class A has a method</p>
 
 <p>III. Both class A and class B extend an abstract class X that has methods</p>
 
-<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">abstract</span> <span class="pl-stj">String</span> getName();
-<span class="pl-s">public</span> <span class="pl-stj">String</span> toString() { <span class="pl-k">return</span> getName(); }</pre></div>
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-s">abstract</span> <span class="pl-stj">String</span> getSuperClassName();</pre></div>
+
+<p>Each class has the method</p>
+
+<div class="highlight highlight-Java"><pre><span class="pl-s">public</span> <span class="pl-st">boolean</span> equals(<span class="pl-stj">Object</span> o) { <span class="pl-k">return</span> getSuperClassName()<span class="pl-k">.</span>equals(o<span class="pl-k">.</span>getSuperClassName()); }</pre></div>
 
 <p>a) I only<br>
 b) II only<br>
 c) I and II<br>
 d) II and III<br>
 e) I, II, and III  </p>
+
+<p>Correct answer d).</p>
 
 <h2>
 <a id="question-3" class="anchor" href="#question-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Question 3</h2>
@@ -231,10 +237,10 @@ e) I, II, and III  </p>
 <p>Given that
 <code>System.out.println(new CompulsiveGambler(300));</code>
 displays 300, which of the following could replace &lt; Missing statements &gt; in CompulsiveGambler's constructor?<br>
-I.    addMoney(m);<br>
-II.    super(m);<br>
-III.   super();<br>
-     addMoney(m);<br>
+I. <code>addMoney(m);</code>
+II. <code>super(m);</code>
+III. <code>super();
+     addMoney(m);</code><br>
 a) I only<br>
 b) II only<br>
 c) I or II<br>
@@ -273,25 +279,21 @@ Correct answer b).</p>
 <p>Given that
 <code>System.out.println(new CompulsiveGambler(300));</code>
 displays 300, which of the following could replace &lt; Missing statements &gt; in CompulsiveGambler's constructor?<br>
-I. super(m/2);<br>
-addMoney(m/2);<br>
-II. addMoney(m/2);<br>
-super(m/2);<br>
-III. super();<br>
-addMoney(m);<br>
+I. <code>super(m/2);  
+addMoney(m/2);</code>
+II. <code>addMoney(m/2);  
+super(m/2);</code>
+III. <code>super();  
+addMoney(m);</code><br>
 a) I only<br>
 b) II only<br>
 c) I or II<br>
 d) II or III<br>
 e) I, II, or III<br>
-correct answer a).</p>
+Correct answer a).</p>
       </section>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/niharmitra">niharmitra</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
     
   </body>
 </html>
