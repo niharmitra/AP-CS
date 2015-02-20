@@ -79,3 +79,74 @@ What is printed as a result of the call fido.act()?
 (c) run eat sleep  
 (d) Nothing is printed due to infinite recursion.  
 (e) run is printed infinitely.  
+
+## Question 1  
+### Original: 
+For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
+Suppose
+```Java
+System.out.println(new A() + "+" + new B());
+```
+displays  
+```A+B  ```
+Which of the following implementations would produce that result?
+I. Class A has a method
+```Java
+          public String toString() { return "A"; }
+```
+   and class B has a method
+```Java
+          public String toString() { return "B"; }
+```
+II. Both class A and class B extend class X that has a method
+```Java
+          public String toString() { return getClass().getname(); }
+```
+III. Both class A and class B extend an abstract class X that has methods
+```Java
+          public abstract String getName();
+          public String toString() { return getname(); }
+```
+   Class A has a method
+```Java
+          public String toString() { return "A"; }
+```
+   and class B has a method
+```Java
+          public String toString() { return "B"; }
+```
+
+### New Version:
+For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
+Suppose
+```Java
+System.out.println(new A() + "+" + new B());
+```
+displays  
+```A+B  ```
+Which of the following implementations would produce that result?
+I. Class A has a method
+```Java
+          public String toString() { return "A"; }
+```
+   and class B has a method
+```Java
+          public String toString() { return "B"; }
+```
+II. Both class A and class B extend class X that has a method
+```Java
+          public String toString() { return getClass().getname(); }
+```
+III. Both class A and class B extend an abstract class X that has methods
+```Java
+          public abstract String getName();
+          public String toString() { return getname(); }
+```
+   Class A has a method
+```Java
+          public String toString() { return "A"; }
+```
+   and class B has a method
+```Java
+          public String toString() { return "B"; }
+```
