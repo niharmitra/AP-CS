@@ -87,33 +87,32 @@ Suppose
 ```Java
 System.out.println(new A() + "+" + new B());
 ```
-displays  
-```A+B  ```
-Which of the following implementations would produce that result?
+displays ```A+B ```
+Which of the following implementations would produce that result?  
 I. Class A has a method
 ```Java
-          public String toString() { return "A"; }
+	public String toString() { return "A"; }
 ```
    and class B has a method
 ```Java
-          public String toString() { return "B"; }
+	public String toString() { return "B"; }
 ```
 II. Both class A and class B extend class X that has a method
 ```Java
-          public String toString() { return getClass().getname(); }
+	public String toString() { return getClass().getname(); }
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
-          public abstract String getName();
-          public String toString() { return getname(); }
+	public abstract String getName();
+	public String toString() { return getname(); }
 ```
    Class A has a method
 ```Java
-          public String toString() { return "A"; }
+	public String toString() { return "A"; }
 ```
    and class B has a method
 ```Java
-          public String toString() { return "B"; }
+	public String toString() { return "B"; }
 ```
 
 ### New Version:
@@ -122,31 +121,30 @@ Suppose
 ```Java
 System.out.println(new A() + "+" + new B());
 ```
-displays  
-```A+B  ```
-Which of the following implementations would produce that result?
+displays ```A+B  ```
+Which of the following implementations would produce that result?  
 I. Class A has a method
 ```Java
-          public String toString() { return "A"; }
+	public String toString() { return "A"; }
 ```
    and class B has a method
 ```Java
-          public String toString() { return "B"; }
+	public String toString() { return "B"; }
 ```
 II. Both class A and class B extend class X that has a method
 ```Java
-          public String toString() { return getClass().getname(); }
+	public String toString() { return getClass().getname(); }
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
-          public abstract String getName();
-          public String toString() { return getname(); }
+	public abstract String getName();
+	public String toString() { return getname(); }
 ```
    Class A has a method
 ```Java
-          public String toString() { return "A"; }
+	public String toString() { return "A"; }
 ```
    and class B has a method
 ```Java
-          public String toString() { return "B"; }
+	public String toString() { return "B"; }
 ```
