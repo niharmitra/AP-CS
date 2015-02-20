@@ -38,6 +38,7 @@ What is printed as a result of the call fido.act()?
 (c) run eat sleep bark  
 (d) run eat bark sleep  
 (e) Nothing is printed due to infinite recursion.  
+Correct answer b).
 
 ### New version
 Consider the following two classes.  
@@ -79,7 +80,7 @@ What is printed as a result of the call fido.act()?
 (c) run eat sleep  
 (d) Nothing is printed due to infinite recursion.  
 (e) run is printed infinitely.  
-
+Correct answer e).
 ## Question 2  
 ### Original: 
 For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
@@ -99,12 +100,12 @@ public String toString() { return "B"; }
 ```
 II. Both class A and class B extend class X that has a method
 ```Java
-public String toString() { return getClass().getname(); }
+public String toString() { return getClass().getName(); }
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
 public abstract String getName();
-public String toString() { return getname(); }
+public String toString() { return getName(); }
 ```
    Class A has a method
 ```Java
@@ -119,6 +120,7 @@ b) II only
 c) I and II  
 d) II and III  
 e) I, II, and III  
+Correct answer e).
 ### New Version:
 For any object obj, a call ```obj.getClass().getName()``` returns the name of the obj's class.
 Suppose
@@ -137,12 +139,12 @@ public String toString() { return "B"; }
 ```
 II. Both class A and class B extend class X that has a method
 ```Java
-public String toString() { return getClass().getname(); }
+public String toString() { return getClass().getName(); }
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
 public abstract String getName();
-public String toString() { return getname(); }
+public String toString() { return getName(); }
 ```
    Class A has a method
 ```Java
@@ -198,6 +200,7 @@ b) II only
 c) I or II  
 d) II or III  
 e) I, II, or III  
+Correct answer b).
 
 ### New Version
 ```Java	
