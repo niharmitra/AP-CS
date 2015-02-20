@@ -108,15 +108,15 @@ public String toString() { return getClass().getName(); }
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
 public abstract String getName();
-public String toString() { return getName(); }
+
 ```
    Class A has a method
 ```Java
-public String toString() { return "A"; }
+public String toString() { return getName(); }
 ```
    and class B has a method
 ```Java
-public String toString() { return "B"; }
+public String toString() { return getName(); }
 ```
 a) I only  
 b) II only  
@@ -135,29 +135,22 @@ displays ```true```
 Which of the following implementations would produce that result?  
 I. Class A has a method
 ```Java
-public boolean equals(Object o) { return ; }
+public boolean equals(Object o) { return getClass().getName().equals(o.getClass().getName()); }
 ```
    and class B has a method
 ```Java
-public boolean equals() { return "B"; }
+public boolean equals(Object o) { return getClass().getName().equals(o.getClass().getName()); }
 ```
 II. Both class A and class B extend class X that has a method
 ```Java
-public boolean equals() { return getClass().getName(); }
+public boolean equals(Object o) { return getClass().getSuperclass().getName().equals(o.getClass(().getSuperclass().getName())); }
 ```
 III. Both class A and class B extend an abstract class X that has methods
 ```Java
 public abstract String getName();
 public String toString() { return getName(); }
 ```
-   Class A has a method
-```Java
-public String toString() { return "A"; }
-```
-   and class B has a method
-```Java
-public String toString() { return "B"; }
-```
+
 a) I only  
 b) II only  
 c) I and II  
