@@ -62,7 +62,7 @@ public class Dijkstra {
 		// existing one
 		for(int i = 0; i < graph.size(); i++) {
 			double pathDist = currentNode.getSrcDist() + currentNode.getEdge(i);
-			System.out.println(pathDist + "," + graph.get(i).getSrcDist());
+//			System.out.println(pathDist + "," + graph.get(i).getSrcDist());
 			if(pathDist < graph.get(i).getSrcDist()) {
 				graph.get(i).setSrcDist(pathDist);
 				graph.get(i).setPrevNode(currentNode);

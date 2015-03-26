@@ -39,6 +39,7 @@ public class ExceptionExercises {
 	public static void main(String[] args) {
 		
 	}
+	@SuppressWarnings("resource")
 	public static void cat(File file) {
 	    RandomAccessFile input = null;
 	    String line = null;

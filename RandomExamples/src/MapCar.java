@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.concurrent.Callable;
 
 
 public abstract class MapCar<T, E> {

@@ -9,7 +9,7 @@ package thinkAPJava.chp15;
  * @author Allen B. Downey
  */
 
-import java.math.BigInteger;
+
 
 public class Exercise1 {
 	/*
